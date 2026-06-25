@@ -3,12 +3,12 @@ import {
   Binary,
   Building2,
   CircleCheckBig,
-  ExternalLink,
   Radar,
   ShieldCheck,
   Target,
 } from "lucide-react";
 
+import { AcquisitionTracker } from "@/components/acquisition-tracker";
 import { AgencyScoreChart } from "@/components/charts/agency-score-chart";
 import { StakeholderNetwork } from "@/components/stakeholder-network";
 import { Badge } from "@/components/ui/badge";
@@ -296,6 +296,9 @@ export default function Home() {
               signals
             </h2>
             <p className="text-sm text-slate-400">
+              Click an opportunity to expand the customer, vehicle, and recommended IQT action.
+            </p>
+            <p className="text-sm text-slate-400">
               Each card links directly to the source opportunity or official acquisition pathway.
             </p>
           </div>
@@ -312,94 +315,7 @@ export default function Home() {
             </CardContent>
           </Card>
 
-          <div className="grid gap-6 xl:grid-cols-2">
-            {playbook.acquisitionOpportunities.map((opportunity) => (
-              <Card key={opportunity.title} className="bg-white/96">
-                <CardHeader className="space-y-4">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <Badge className="w-fit">{opportunity.dashboardBadge}</Badge>
-                    <Badge variant="outline" className="w-fit">
-                      Priority: {opportunity.priority}
-                    </Badge>
-                  </div>
-                  <div className="space-y-2">
-                    <CardTitle className="text-2xl leading-tight">{opportunity.title}</CardTitle>
-                    <CardDescription className="text-sm leading-6 text-slate-600">
-                      {opportunity.agency} · {opportunity.opportunityType}
-                    </CardDescription>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-5">
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {[
-                      ["Status", opportunity.status],
-                      ["Opportunity ID", opportunity.opportunityId],
-                      ["End user", opportunity.endUser],
-                      ["Source", opportunity.source],
-                      ["Due date", opportunity.dueDate ?? "Not listed"],
-                      ["Estimated value", opportunity.estimatedValue ?? "Not listed"],
-                      ["Vehicle", opportunity.likelyVehicle ?? "Not listed"],
-                      ["NAICS", opportunity.naics ?? "Not listed"],
-                    ].map(([label, value]) => (
-                      <div
-                        key={`${opportunity.title}-${label}`}
-                        className="rounded-2xl border border-slate-200/80 bg-slate-50/90 px-4 py-3"
-                      >
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                          {label}
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-slate-700">{value}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4 text-sm leading-6 text-slate-700">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Mission need
-                      </p>
-                      <p className="mt-2">{opportunity.missionNeed}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Why RevEng fits
-                      </p>
-                      <p className="mt-2">{opportunity.whyRevEngFits}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Customer hypothesis
-                      </p>
-                      <p className="mt-2">{opportunity.customerHypothesis}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Recommended IQT action
-                      </p>
-                      <p className="mt-2">{opportunity.recommendedIQTAction}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-3 border-t border-slate-200 pt-4">
-                    {opportunity.sourceUrl ? (
-                      <a
-                        href={opportunity.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 transition-colors hover:border-blue-300 hover:bg-blue-100"
-                      >
-                        View source
-                        <span className="text-blue-600">{opportunity.sourceLabel}</span>
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    ) : (
-                      <span className="text-sm text-slate-400">Source needed</span>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <AcquisitionTracker opportunities={playbook.acquisitionOpportunities} />
 
           <Card className="mt-6 border-white/10 bg-slate-950 text-white">
             <CardContent className="p-6">

@@ -33,6 +33,8 @@ export type AcquisitionOpportunity = {
   sourceLabel: string;
   sourceUrl?: string;
   agency: string;
+  endUserShort: string;
+  statusCategory: "Live" | "Pathway" | "Historical";
   endUser: string;
   opportunityType: string;
   status: string;
@@ -46,6 +48,7 @@ export type AcquisitionOpportunity = {
   recommendedIQTAction: string;
   dashboardBadge: string;
   priority: string;
+  whyItMatters: string;
 };
 
 export const playbook = {
@@ -272,6 +275,8 @@ export const playbook = {
       sourceLabel: "SAM.gov Notice",
       sourceUrl: "https://sam.gov/opp/64e207182370419db58caa0d31c0bf39/view",
       agency: "DHS / CISA",
+      endUserShort: "CISA Threat Hunting",
+      statusCategory: "Live",
       endUser: "CISA Cybersecurity Division, Threat Hunting Sub-division",
       opportunityType: "RFI / Sources Sought / Market Research",
       status: "Live / future-facing",
@@ -289,6 +294,8 @@ export const playbook = {
         "Treat this as the primary live target. Use the RFI to identify the mission owner, map the likely prime ecosystem, and position RevEng as a specialized malware-analysis capability that could partner with a prime or support a pilot.",
       dashboardBadge: "Primary live target",
       priority: "High",
+      whyItMatters:
+        "Live CISA threat-hunting requirement tied to cyber operations and tool sustainment.",
     },
     {
       title: "CISA Malware Analysis Support Services",
@@ -297,6 +304,8 @@ export const playbook = {
       sourceLabel: "DHS APFS Forecast",
       sourceUrl: "https://apfs-cloud.dhs.gov/record/69864/public-print/",
       agency: "DHS / CISA",
+      endUserShort: "CISA Code & Media Analysis",
+      statusCategory: "Historical",
       endUser:
         "CISA Cybersecurity Division, Threat Hunting subdivision, Code and Media Analysis Section",
       opportunityType: "Historical RFQ / Forecast",
@@ -313,6 +322,8 @@ export const playbook = {
         "Use this as proof that CISA has purchased or planned to purchase exactly this type of mission support before. Determine whether the requirement was cancelled, absorbed into Cyber Technology Services, shifted to another vehicle, or awarded through a prime.",
       dashboardBadge: "Validated demand signal",
       priority: "High",
+      whyItMatters:
+        "Direct proof that CISA has expressed demand for malware reverse-engineering support.",
     },
     {
       title: "Tradewinds Solutions Marketplace",
@@ -320,7 +331,9 @@ export const playbook = {
       source: "CDAO / Tradewinds",
       sourceLabel: "Tradewinds Marketplace",
       sourceUrl: "https://www.tradewindai.com/tw-marketplace",
-      agency: "Department of Defense",
+      agency: "DoD",
+      endUserShort: "DoD AI / cyber buyers",
+      statusCategory: "Pathway",
       endUser: "DoD AI, cyber, digital, and data buyers",
       opportunityType: "Awardable marketplace / rapid acquisition pathway",
       status: "Open pathway to monitor / submit",
@@ -334,6 +347,8 @@ export const playbook = {
         "Assess whether RevEng should submit a 5-minute pitch to Tradewinds, then use awardable status to make the company easier for DoD customers to purchase.",
       dashboardBadge: "DoD acquisition pathway",
       priority: "Medium-High",
+      whyItMatters:
+        "Pathway for DoD users to discover and acquire AI-enabled cyber capabilities.",
     },
     {
       title: "DoD SBIR/STTR Cyber Topics",
@@ -341,7 +356,9 @@ export const playbook = {
       source: "Defense SBIR/STTR",
       sourceLabel: "DoD SBIR/STTR Opportunities",
       sourceUrl: "https://www.defensesbirsttr.mil/SBIR-STTR/Opportunities/",
-      agency: "Department of Defense",
+      agency: "DoD",
+      endUserShort: "Component cyber R&D offices",
+      statusCategory: "Pathway",
       endUser: "Topic-dependent DoD cyber, software assurance, and R&D offices",
       opportunityType: "SBIR / STTR / Direct-to-Phase-II pathway",
       status: "Future topics to monitor",
@@ -355,6 +372,8 @@ export const playbook = {
         "Create saved searches for malware analysis, reverse engineering, binary analysis, software assurance, vulnerability research, and AI cyber defense.",
       dashboardBadge: "Funding pathway to monitor",
       priority: "Medium",
+      whyItMatters:
+        "Funding route when topics align to malware analysis, binary analysis, or AI cyber defense.",
     },
     {
       title: "GSA MAS SIN 54151HACS",
@@ -364,6 +383,8 @@ export const playbook = {
       sourceUrl:
         "https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/multiple-award-schedule-it/highly-adaptive-cybersecurity-services",
       agency: "Government-wide",
+      endUserShort: "CISA / DHS / DoD cyber buyers",
+      statusCategory: "Pathway",
       endUser: "CISA, DHS components, DoD, and civilian cyber offices",
       opportunityType: "Contract vehicle / teaming pathway",
       status: "Existing vehicle",
@@ -377,6 +398,8 @@ export const playbook = {
         "Map 5-10 likely HACS primes supporting CISA threat hunting and identify where RevEng could be inserted as a specialized malware-analysis capability.",
       dashboardBadge: "Partnering / prime path",
       priority: "Medium-High",
+      whyItMatters:
+        "Practical teaming path through primes already selling cyber services to government.",
     },
   ] satisfies AcquisitionOpportunity[],
   recommendation:
