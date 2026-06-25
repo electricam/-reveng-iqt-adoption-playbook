@@ -282,6 +282,96 @@ export const playbook = {
       nextAction:
         "Clarify whether RevEng is best positioned as a direct operational support tool, a specialist capability inside a larger services contract, or a partner to an incumbent prime.",
     },
+    {
+      name: "Brig. Gen. Matthew J. Lennox",
+      role: "Commander, Cyber National Mission Force",
+      organization: "USCYBERCOM",
+      relevance:
+        "Most relevant named leader for the CNMF lane if RevEng is positioned around malware understanding in operational environments, hunt-forward missions, and national mission operations.",
+      nextAction:
+        "Use this lane to frame RevEng as an operational malware-analysis accelerator for mission teams that need faster understanding of tools found in the field.",
+    },
+    {
+      name: "Col. Christopher S. Corbett",
+      role: "Deputy Commander of Operations, Cyber National Mission Force",
+      organization: "USCYBERCOM",
+      relevance:
+        "Operationally credible stakeholder for how malware-analysis tooling fits into planning, defensive operations, and full-spectrum cyberspace operations inside CNMF.",
+      nextAction:
+        "Treat this as the most concrete USCYBERCOM operations persona for validating workflows, speed-to-understanding, and analyst utility.",
+    },
+    {
+      name: "Lt. Gen. Christopher L. Eubank",
+      role: "Commanding General, U.S. Army Cyber Command",
+      organization: "Army Cyber Command",
+      relevance:
+        "Top Army Cyber leader for determining whether RevEng belongs in Army cyber operations, joint mission support, or a longer modernization pathway tied to Army priorities.",
+      nextAction:
+        "Use this lane to test whether RevEng should be pitched as an operational Army cyber capability or as a tool better transitioned through acquisition channels first.",
+    },
+    {
+      name: "Brig. Gen. John F. Popiak",
+      role: "Deputy Commanding General for Operations, U.S. Army Cyber Command",
+      organization: "Army Cyber Command",
+      relevance:
+        "A more operationally specific Army Cyber stakeholder for understanding how repeatable malware-analysis workflows could fit into defensive cyber operations and supported units.",
+      nextAction:
+        "Use this card as the closest public operational proxy for Cyber Protection Team workflow validation and field-user pull.",
+    },
+    {
+      name: "Laurence Mixon",
+      role: "Acting Deputy Capability Program Executive for Intelligence and Spectrum Warfare",
+      organization: "PEO IEW&S / Army",
+      relevance:
+        "Senior acquisition stakeholder across the broader portfolio who can help determine where RevEng fits among Army cyber, intelligence, and information-warfare acquisition priorities.",
+      nextAction:
+        "Use this lane to understand whether RevEng belongs in PM Cyber and Space, PM DCO, or another transition path inside the Army acquisition structure.",
+    },
+    {
+      name: "Cathy Hammer",
+      role: "Acting Project Manager, Cyber & Space",
+      organization: "PEO IEW&S / Army",
+      relevance:
+        "Most specific public PM-level stakeholder for Army offensive cyber and adjacent cyber capability delivery to USCYBERCOM and ARCYBER users.",
+      nextAction:
+        "Treat this as the most practical Army acquisition contact for whether RevEng can align to an existing cyber capability line rather than stand alone as a new program.",
+    },
+    {
+      name: "Christopher Green",
+      role: "Project Manager, Defensive Cyber Operations",
+      organization: "PEO IEW&S / Army",
+      relevance:
+        "Most relevant public PM-level stakeholder for the Army’s defensive cyber operations lane, especially if RevEng is framed around malware analysis, forensics, and fielded defensive cyber tooling.",
+      nextAction:
+        "Use this lane to explore whether RevEng fits better into the defensive-cyber portfolio than a broader cyber modernization conversation.",
+    },
+    {
+      name: "Pedro M. Allende",
+      role: "Under Secretary for Science and Technology",
+      organization: "DHS S&T",
+      relevance:
+        "Top DHS S&T leader for determining whether RevEng belongs in a broader DHS cybersecurity R&D and transition conversation rather than only an operational CISA lane.",
+      nextAction:
+        "Use this lane when the conversation shifts from immediate CISA operational demand to DHS-wide cyber transition, evaluation, and R&D sponsorship.",
+    },
+    {
+      name: "Donald Coulter",
+      role: "Senior Science Advisor for Cybersecurity",
+      organization: "DHS S&T",
+      relevance:
+        "Most cyber-specific named DHS S&T stakeholder surfaced publicly for cybersecurity R&D relevance, technical evaluation, and transition-oriented discussions.",
+      nextAction:
+        "Position RevEng here as a cybersecurity R&D and transition candidate when the pitch is about technical evaluation, emerging capability fit, and future component adoption.",
+    },
+    {
+      name: "Julie Brewer",
+      role: "Deputy Under Secretary for Science and Technology",
+      organization: "DHS S&T",
+      relevance:
+        "Important senior S&T leader for turning cybersecurity R&D interest into an actual DHS transition or partnership conversation across the directorate.",
+      nextAction:
+        "Use this lane when RevEng needs a senior DHS S&T champion for experimentation, transition planning, and cross-directorate visibility.",
+    },
   ] satisfies Stakeholder[],
   acquisitionOpportunities: [
     {
