@@ -35,12 +35,12 @@ export function StakeholderNetwork({ items }: { items: Stakeholder[] }) {
             </div>
             <div className="rounded-[2rem] border border-white/10 bg-white/8 px-8 py-10 text-center shadow-2xl backdrop-blur">
               <Badge variant="accent" className="mx-auto border-emerald-400/40 bg-emerald-400/12 text-emerald-100">
-                Venture Portfolio Company
+                Priority Company
               </Badge>
               <h3 className="mt-4 text-3xl font-semibold tracking-tight">RevEng</h3>
               <p className="mt-3 max-w-xs text-sm leading-6 text-slate-300">
-                AI-assisted reverse engineering, malware triage, and intelligence generation for
-                cyber mission owners.
+                Map the named people who can validate mission pull, open the right office doors,
+                and shape the first customer-discovery cycle.
               </p>
             </div>
           </div>
@@ -52,18 +52,19 @@ export function StakeholderNetwork({ items }: { items: Stakeholder[] }) {
           <Card key={item.name} className="border-slate-200 bg-white/95">
             <CardContent className="space-y-4 p-6">
               <div className="space-y-2">
-                <Badge variant="outline">Mission fit: {item.missionFit}</Badge>
+                <Badge variant="outline">{item.organization}</Badge>
                 <h3 className="text-xl font-semibold tracking-tight text-slate-950">{item.name}</h3>
+                <p className="text-sm font-medium text-slate-600">{item.role}</p>
               </div>
               <div className="space-y-2 text-sm text-slate-600">
                 <p>
-                  <span className="font-medium text-slate-800">Likely buyer/user:</span>{" "}
-                  {item.likelyBuyer}
+                  <span className="font-medium text-slate-800">Why this person matters:</span>{" "}
+                  {item.relevance}
                 </p>
                 <p className="flex items-start gap-2">
                   <ArrowRight className="mt-0.5 h-4 w-4 flex-none text-emerald-600" />
                   <span>
-                    <span className="font-medium text-slate-800">Next action:</span>{" "}
+                    <span className="font-medium text-slate-800">How to use them:</span>{" "}
                     {item.nextAction}
                   </span>
                 </p>

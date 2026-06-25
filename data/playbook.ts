@@ -21,8 +21,9 @@ export type Opportunity = {
 
 export type Stakeholder = {
   name: string;
-  missionFit: string;
-  likelyBuyer: string;
+  role: string;
+  organization: string;
+  relevance: string;
   nextAction: string;
 };
 
@@ -237,34 +238,49 @@ export const playbook = {
   ],
   stakeholders: [
     {
-      name: "NSA Cybersecurity Directorate",
-      missionFit: "Highest",
-      likelyBuyer: "Mission analysts and defensive cyber leadership",
-      nextAction: "Run a malware triage workflow review with exemplar samples",
+      name: "Kristina Walter",
+      role: "Chief, Cybersecurity Collaboration Center",
+      organization: "NSA",
+      relevance:
+        "Key named leader for industry-facing collaboration and the most natural first bridge into NSA malware-analysis and DIB defense use cases.",
+      nextAction:
+        "Validate whether RevEng should be framed as a collaboration-center introduction, analyst workflow demo, or DIB-focused malware-analysis capability.",
     },
     {
-      name: "CISA JCDC",
-      missionFit: "High",
-      likelyBuyer: "Public-private defense coordinators and campaign planners",
-      nextAction: "Frame a campaign analysis workshop for critical infrastructure use cases",
+      name: "Dave Luber",
+      role: "Director of Cybersecurity",
+      organization: "NSA",
+      relevance:
+        "Senior mission owner for NSA cybersecurity priorities and a critical signal on whether RevEng aligns with national-level defensive cyber outcomes.",
+      nextAction:
+        "Pressure-test the national-security framing: malware-analysis acceleration, defensive guidance generation, and analyst productivity at scale.",
     },
     {
-      name: "USCYBERCOM CNMF",
-      missionFit: "High",
-      likelyBuyer: "Operational malware analysts supporting hunt-forward missions",
-      nextAction: "Demonstrate speed-to-understanding on field-discovered samples",
+      name: "Chris Butera",
+      role: "Acting Executive Assistant Director for Cybersecurity",
+      organization: "CISA",
+      relevance:
+        "Senior CISA cyber decision-maker connected to the broader cybersecurity division and likely important for validating where RevEng fits inside active CISA mission demand.",
+      nextAction:
+        "Map whether the right lane is Cyber Technology Services, Threat Hunting, incident response support, or a broader cyber-operations workflow conversation.",
     },
     {
-      name: "Army Cyber CPTs",
-      missionFit: "Medium-High",
-      likelyBuyer: "Defensive cyber operators and unit tech leads",
-      nextAction: "Collect field feedback on repeatable analyst workflows",
+      name: "Nick Andersen",
+      role: "Senior CISA Cyber Leader",
+      organization: "CISA",
+      relevance:
+        "Frequently appears as the public operational voice for CISA cyber priorities and is a useful proxy for what malware-analysis capabilities CISA is actively emphasizing.",
+      nextAction:
+        "Use his public cyber guidance and statements to sharpen the CISA mission narrative around active threat response, malware analysis, and operational relevance.",
     },
     {
-      name: "DHS S&T Cyber R&D",
-      missionFit: "Medium",
-      likelyBuyer: "Transition and evaluation stakeholders",
-      nextAction: "Assess pilotability and component-level transition path",
+      name: "Boyden Rohner",
+      role: "Deputy Assistant Director, Integrated Operations Division",
+      organization: "CISA",
+      relevance:
+        "Important operational stakeholder for how CISA routes support during real incidents and for understanding where malware-analysis capability intersects with integrated cyber operations.",
+      nextAction:
+        "Clarify whether RevEng is best positioned as a direct operational support tool, a specialist capability inside a larger services contract, or a partner to an incumbent prime.",
     },
   ] satisfies Stakeholder[],
   acquisitionOpportunities: [
@@ -402,6 +418,4 @@ export const playbook = {
         "Practical teaming path through primes already selling cyber services to government.",
     },
   ] satisfies AcquisitionOpportunity[],
-  recommendation:
-    "Prioritize NSA and CISA first. NSA offers the strongest mission fit for malware analysis and national cyber defense. CISA offers the best public-private scaling pathway through JCDC and incident response. USCYBERCOM and Army Cyber are strong follow-on users once workflows are validated.",
 };

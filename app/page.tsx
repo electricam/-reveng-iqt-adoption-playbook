@@ -1,15 +1,10 @@
 import {
   ArrowRight,
   Binary,
-  Building2,
   CircleCheckBig,
-  Radar,
-  ShieldCheck,
-  Target,
 } from "lucide-react";
 
 import { AcquisitionTracker } from "@/components/acquisition-tracker";
-import { AgencyScoreChart } from "@/components/charts/agency-score-chart";
 import { StakeholderNetwork } from "@/components/stakeholder-network";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,9 +23,6 @@ export default function Home() {
           <div className="rounded-[2rem] border border-white/10 bg-white/6 px-6 py-6 shadow-[0_30px_120px_-45px_rgba(15,23,42,0.85)] backdrop-blur-sm sm:px-8 lg:px-10 lg:py-10">
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
               <div className="space-y-6">
-                <Badge variant="accent" className="border-emerald-400/25 bg-emerald-400/10 text-emerald-100">
-                  In-Q-Tel Interview Demo
-                </Badge>
                 <div className="space-y-4">
                   <h1 className="max-w-4xl font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
                     {playbook.hero.title}
@@ -243,51 +235,6 @@ export default function Home() {
       </section>
 
       <section className="px-6 pt-8 sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-          <Card className="bg-white/96">
-            <CardHeader className="space-y-3">
-              <Badge className="w-fit">Opportunity Scoring</Badge>
-              <CardTitle>How the weighted score is framed</CardTitle>
-              <CardDescription>
-                The weighting keeps the conversation focused on mission adoption rather than generic
-                market attractiveness.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {playbook.scoringWeights.map((item) => (
-                <div key={item.label} className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="font-medium text-slate-800">{item.label}</span>
-                    <span className="text-slate-500">{item.weight}%</span>
-                  </div>
-                  <div className="h-2 rounded-full bg-slate-100">
-                    <div
-                      className="h-2 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500"
-                      style={{ width: `${item.weight}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/96">
-            <CardHeader className="space-y-3">
-              <Badge className="w-fit">Agency Comparison</Badge>
-              <CardTitle>Top mission-owner scores</CardTitle>
-              <CardDescription>
-                NSA leads due to the strongest mission fit and analyst alignment, with CISA and
-                USCYBERCOM close behind as validation and operational expansion paths.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <AgencyScoreChart data={playbook.agencyScores} />
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <section className="px-6 pt-8 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 flex flex-col gap-3">
             <Badge className="w-fit">Live &amp; Future Acquisition Pathways</Badge>
@@ -316,65 +263,6 @@ export default function Home() {
           </Card>
 
           <AcquisitionTracker opportunities={playbook.acquisitionOpportunities} />
-
-          <Card className="mt-6 border-white/10 bg-slate-950 text-white">
-            <CardContent className="p-6">
-              <p className="max-w-5xl text-base leading-7 text-slate-300">
-                Best interview framing: this dashboard links each adoption hypothesis to a real
-                source - a live SAM.gov RFI, a DHS APFS malware-analysis forecast, or an official
-                acquisition pathway. The point is not to claim RevEng should bid everything
-                directly; it is to identify real buyers, real vehicles, and real end users for
-                IQT-led customer discovery.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <section className="px-6 pt-8 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <Card className="bg-white/96">
-            <CardHeader className="space-y-3">
-              <Badge className="w-fit">90-Day Action Plan</Badge>
-              <CardTitle>Sequence conversations from analyst pull to transition pathway</CardTitle>
-              <CardDescription>
-                The timeline keeps the first 90 days measurable: validate demand, test workflows,
-                prove time saved, and package the next step.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-5 lg:grid-cols-4">
-                {playbook.plan.map((phase, index) => (
-                  <div key={phase.phase} className="relative">
-                    {index < playbook.plan.length - 1 ? (
-                      <div className="absolute right-0 top-9 hidden h-px w-8 translate-x-4 bg-gradient-to-r from-blue-200 to-emerald-300 lg:block" />
-                    ) : null}
-                    <div className="h-full rounded-[1.75rem] border border-slate-200/80 bg-slate-50/80 p-5">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white">
-                          {index + 1}
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                            Phase
-                          </p>
-                          <h3 className="text-lg font-semibold text-slate-950">{phase.phase}</h3>
-                        </div>
-                      </div>
-                      <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-600">
-                        {phase.items.map((item) => (
-                          <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 h-2 w-2 flex-none rounded-full bg-emerald-500" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
@@ -383,67 +271,14 @@ export default function Home() {
           <div className="mb-6 flex flex-col gap-3">
             <Badge className="w-fit">Stakeholder Map</Badge>
             <h2 className="font-display text-3xl font-semibold tracking-tight text-white">
-              RevEng should be introduced through mission owners, not abstract agencies
+              Focus on named people who can open the right mission and acquisition doors
             </h2>
             <p className="max-w-3xl text-base leading-7 text-slate-300">
-              The stakeholder view keeps the discussion centered on likely users, champions, and
-              next actions rather than generic account coverage.
+              This view is less about abstract agencies and more about the public leaders and
+              operational stakeholders RevEng should identify, map, and work through first.
             </p>
           </div>
           <StakeholderNetwork items={playbook.stakeholders} />
-        </div>
-      </section>
-
-      <section className="px-6 pt-8 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <Card className="overflow-hidden border-white/10 bg-slate-950 text-white">
-            <div className="absolute" />
-            <CardContent className="grid gap-8 p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
-              <div className="space-y-4">
-                <Badge variant="accent" className="border-emerald-400/30 bg-emerald-400/10 text-emerald-100">
-                  Final Recommendation
-                </Badge>
-                <h2 className="font-display text-3xl font-semibold tracking-tight">
-                  {playbook.recommendation}
-                </h2>
-                <p className="max-w-3xl text-base leading-7 text-slate-300">
-                  For an IQT-style playbook, the strongest path is to validate the analyst workflow
-                  in NSA and CISA first, then use those lessons to support follow-on adoption across
-                  operational and modernization stakeholders.
-                </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  {
-                    icon: ShieldCheck,
-                    title: "Best initial mission fit",
-                    text: "NSA Cybersecurity Collaboration Center and the Cybersecurity Directorate.",
-                  },
-                  {
-                    icon: Building2,
-                    title: "Best scaling pathway",
-                    text: "CISA JCDC and incident response channels for broader campaign visibility.",
-                  },
-                  {
-                    icon: Target,
-                    title: "Best pilot metric",
-                    text: "Time from malware sample to analyst-usable intelligence package.",
-                  },
-                  {
-                    icon: Radar,
-                    title: "Best IQT value-add",
-                    text: "Broker technical introductions, workflow validation, and transition narrative.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-                    <item.icon className="h-6 w-6 text-emerald-300" />
-                    <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-300">{item.text}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
