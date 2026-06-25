@@ -268,15 +268,8 @@ export default function Home() {
 
       <section className="px-6 pt-8 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-6 flex flex-col gap-3">
+          <div className="mb-6">
             <Badge className="w-fit">Stakeholder Map</Badge>
-            <h2 className="font-display text-3xl font-semibold tracking-tight text-white">
-              Focus on named people who can open the right mission and acquisition doors
-            </h2>
-            <p className="max-w-3xl text-base leading-7 text-slate-300">
-              This view is less about abstract agencies and more about the public leaders and
-              operational stakeholders RevEng should identify, map, and work through first.
-            </p>
           </div>
           <StakeholderNetwork items={playbook.stakeholders} />
         </div>
